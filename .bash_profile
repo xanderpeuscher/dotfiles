@@ -5,7 +5,7 @@ export HISTSIZE=10000
 
 # Make ls use colors
 export CLICOLOR=1
-alias ls='ls -Fa'
+alias ls='ls -Fla'
 
 # define colors
 C_DEFAULT="\[\033[m\]"
