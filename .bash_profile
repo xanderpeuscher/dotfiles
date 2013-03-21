@@ -1,5 +1,8 @@
 export PATH=$PATH:~/bin
 
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+
 # Make ls use colors
 export CLICOLOR=1
 alias ls='ls -Fa'
