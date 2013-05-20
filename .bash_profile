@@ -1,4 +1,5 @@
 export PATH=$PATH:~/bin
+export PATH=${PATH}:$HOME/dotfiles/gcutil-1.8.0
 
 export HISTFILESIZE=10000
 export HISTSIZE=10000
