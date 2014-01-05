@@ -30,5 +30,6 @@ brew cask install flow
 brew cask install vlc
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install silverlight
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
