@@ -25,5 +25,6 @@ brew cask install firefox
 brew cask install dropbox
 brew cask install sublime-text
 brew cask install onepassword
+brew cask install sequel-pro
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
