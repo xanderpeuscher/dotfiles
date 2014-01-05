@@ -14,7 +14,7 @@ echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
 brew install wget
 brew install git
 
-echo -e "${RED}Installing homebrew cask${RESETCOLOR}"
+echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
 brew install brew-cask
 
@@ -26,5 +26,9 @@ brew cask install dropbox
 brew cask install sublime-text
 brew cask install onepassword
 brew cask install sequel-pro
+brew cask install flow
+brew cask install vlc
+brew cask install virtualbox
+brew cask install vagrant
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
