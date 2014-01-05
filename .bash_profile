@@ -1,39 +1,31 @@
-export PATH=$PATH:~/bin
-export PATH=${PATH}:$HOME/dotfiles/gcutil-1.8.0
+# adding ~/bin to the path
+export PATH=${PATH}:$HOME/bin
 
-export HISTFILESIZE=10000
-export HISTSIZE=10000
+# setting the default editor
+export EDITOR='subl -w'
 
-# Make ls use colors
+# setting colors
+# http://stackoverflow.com/questions/1550288/mac-os-x-terminal-colors
+export TERM="xterm-color"
+
+RED="\[\e[0;31m\]"
+GREEN="\[\e[0;32m\]"
+YELLOW="\[\e[0;33m\]"
+BLUE="\[\e[0;34m\]"
+RESETCOLOR="\[\e[0m\]" 
+
 export CLICOLOR=1
-alias ls='ls -Fla'
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# define colors
-C_DEFAULT="\[\033[m\]"
-C_WHITE="\[\033[1m\]"
-C_BLACK="\[\033[30m\]"
-C_RED="\[\033[31m\]"
-C_GREEN="\[\033[32m\]"
-C_YELLOW="\[\033[33m\]"
-C_BLUE="\[\033[34m\]"
-C_PURPLE="\[\033[35m\]"
-C_CYAN="\[\033[36m\]"
-C_LIGHTGRAY="\[\033[37m\]"
-C_DARKGRAY="\[\033[1;30m\]"
-C_LIGHTRED="\[\033[1;31m\]"
-C_LIGHTGREEN="\[\033[1;32m\]"
-C_LIGHTYELLOW="\[\033[1;33m\]"
-C_LIGHTBLUE="\[\033[1;34m\]"
-C_LIGHTPURPLE="\[\033[1;35m\]"
-C_LIGHTCYAN="\[\033[1;36m\]"
-C_BG_BLACK="\[\033[40m\]"
-C_BG_RED="\[\033[41m\]"
-C_BG_GREEN="\[\033[42m\]"
-C_BG_YELLOW="\[\033[43m\]"
-C_BG_BLUE="\[\033[44m\]"
-C_BG_PURPLE="\[\033[45m\]"
-C_BG_CYAN="\[\033[46m\]"
-C_BG_LIGHTGRAY="\[\033[47m\]"
+# setting the PS1
+function parse_git_dirty() {
+        [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+}
 
-# set your prompt
-export PS1="\n$C_LIGHTGREEN\u$C_DARKGRAY@$C_BLUE\h $C_DARKGRAY: $C_LIGHTYELLOW\w $C_DARKGRAY\$$C_DEFAULT "
+function parse_git_branch() {
+        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+export PS1="\n    ${BLUE}\w\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"  ${YELLOW}\")\$(parse_git_branch)\n${RESETCOLOR}→ "
+
+

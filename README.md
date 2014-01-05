@@ -1,10 +1,16 @@
 dotfiles
 ========
 
-To load the files add a .profile and .bash_profile file to ~/ with the following script. You could also symlink the files.
+To get started execute the following commands.
 
-```if [ -f $HOME/Development/dotfiles/.bash_profile ]; then
-        . $HOME/Development/dotfiles/.bash_profile
-fi```
+```
+cp .bash_profile ~/.bash_profile
+cp .bashrc ~/.bash_profile
+cp .gitconfig ~/.gitconfig
+```
 
+To execute the bootstrap script 
 
+```
+bash bootstrap.sh
+```
