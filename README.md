@@ -12,5 +12,6 @@ cp .gitconfig ~/.gitconfig
 To execute the bootstrap script 
 
 ```
-bash bootstrap.sh
+chmod u+x bootstrap.sh
+./bootstrap.sh
 ```
