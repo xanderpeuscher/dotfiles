@@ -7,6 +7,9 @@ YELLOW="\033[4;33m"
 BLUE="\033[4;34m"
 RESETCOLOR="\033[0m" 
 
+echo -e "${BLUE}Installing cocoapods${RESETCOLOR}"
+sudo gem install cocoapods
+
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
@@ -31,5 +34,6 @@ brew cask install vlc
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install silverlight
+brew cask install hipchat
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
