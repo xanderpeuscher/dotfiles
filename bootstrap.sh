@@ -36,4 +36,7 @@ brew cask install vagrant
 brew cask install silverlight
 brew cask install hipchat
 
+echo -e "${BLUE}Linking commands${RESETCOLOR}"
+ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
+
 echo -e "${GREEN}Script done${RESETCOLOR}"
