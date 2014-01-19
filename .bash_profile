@@ -1,6 +1,11 @@
 # adding ~/bin to the path
 export PATH=${PATH}:$HOME/bin
 
+# adding RVM
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm;
+fi
+
 # setting the default editor
 export EDITOR='subl -w'
 
