@@ -21,7 +21,7 @@ cp .bash_profile ~/.bash_profile
 cp .bashrc ~/.bashrc
 cp .gitconfig ~/.gitconfig
 
-echo -e "${BLUE}Installing RVM${RESETCOLOR}"
+echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
 mkdir -p ~/.rvm/src
 cd ~/.rvm/src
 rm -rf ./rvm
@@ -33,8 +33,12 @@ cd ~/
 source ~/.bash_profile # To reload the bash profile
 source ~/.bashrc # To reload the bashrc
 
-echo -e "${BLUE}Installing cocoapods${RESETCOLOR}"
-gem install cocoapods
+rvm install 1.9.2
+rvm install 2.1.0
+rvm --default 2.1.0
+
+echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
+gem install cocoapods rails sinatra
 
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
