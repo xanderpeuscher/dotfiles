@@ -7,6 +7,14 @@ YELLOW="\033[4;33m"
 BLUE="\033[4;34m"
 RESETCOLOR="\033[0m" 
 
+echo "Do you wish to execute the bootstrap script and install a whole lot of things?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
 echo -e "${BLUE}Setting up Bash and Git Config${RESETCOLOR}"
 
 cp .bash_profile ~/.bash_profile
