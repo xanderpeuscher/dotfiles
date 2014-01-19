@@ -1,17 +1,11 @@
 dotfiles
 ========
 
-To get started execute the following commands.
+To get started bootstrapping your mac execute the following commands.
 
 ```
-cp .bash_profile ~/.bash_profile
-cp .bashrc ~/.bashrc
-cp .gitconfig ~/.gitconfig
-```
-
-To execute the bootstrap script 
-
-```
-chmod u+x bootstrap.sh
-./bootstrap.sh
+mkdir -p ~/Development/dotfiles  && \
+curl -sS https://github.com/tscheepers/dotfiles/archive/master.zip > ~/Development/dotfiles.zip && \
+unzip dotfiles.zip -d dotfiles && cd ~/Development/dotfiles && \
+chmod u+x bootstrap.sh && ./bootstrap.sh
 ```
