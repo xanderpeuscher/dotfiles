@@ -7,8 +7,26 @@ YELLOW="\033[4;33m"
 BLUE="\033[4;34m"
 RESETCOLOR="\033[0m" 
 
+echo -e "${BLUE}Setting up Bash and Git Config${RESETCOLOR}"
+
+cp .bash_profile ~/.bash_profile
+cp .bashrc ~/.bashrc
+cp .gitconfig ~/.gitconfig
+
+echo -e "${BLUE}Installing RVM${RESETCOLOR}"
+mkdir -p ~/.rvm/src
+cd ~/.rvm/src
+rm -rf ./rvm
+git clone --depth 1 git://github.com/wayneeseguin/rvm.git
+cd rvm
+./install
+cd ~/
+
+source ~/.bash_profile # To reload the bash profile
+source ~/.bashrc # To reload the bashrc
+
 echo -e "${BLUE}Installing cocoapods${RESETCOLOR}"
-sudo gem install cocoapods
+gem install cocoapods
 
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
