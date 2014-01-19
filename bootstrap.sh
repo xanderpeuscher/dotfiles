@@ -7,7 +7,7 @@ YELLOW="\033[4;33m"
 BLUE="\033[4;34m"
 RESETCOLOR="\033[0m" 
 
-echo "Do you wish to execute the bootstrap script and install a whole lot of things?"
+echo "Do you wish to execute the bootstrap script and install a whole lot of things? (You should have changed the current directory to the directory of this file)"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) break;;
