@@ -21,24 +21,24 @@ cp .bash_profile ~/.bash_profile
 cp .bashrc ~/.bashrc
 cp .gitconfig ~/.gitconfig
 
-echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
-mkdir -p ~/.rvm/src
-cd ~/.rvm/src
-rm -rf ./rvm
-git clone --depth 1 git://github.com/wayneeseguin/rvm.git
-cd rvm
-./install
-cd ~/
+# echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
+# mkdir -p ~/.rvm/src
+# cd ~/.rvm/src
+# rm -rf ./rvm
+# git clone --depth 1 git://github.com/wayneeseguin/rvm.git
+# cd rvm
+# ./install
+# cd ~/
 
-source ~/.bash_profile # To reload the bash profile
-source ~/.bashrc # To reload the bashrc
+# source ~/.bash_profile # To reload the bash profile
+# source ~/.bashrc # To reload the bashrc
 
-rvm install 1.9.2
-rvm install 2.1.0
-rvm --default 2.1.0
+# rvm install 1.9.2
+# rvm install 2.1.0
+# rvm --default 2.1.0
 
-echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
-gem install cocoapods rails sinatra
+# echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
+# gem install cocoapods rails sinatra
 
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -77,25 +77,25 @@ brew cask install logitech-control-center
 echo -e "${BLUE}Linking commands${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
 
-echo -e "${BLUE}Opening apps that need further setup${RESETCOLOR}"
-open ~/Applications/Dropbox.app # To enter dropbox details
+# echo -e "${BLUE}Opening apps that need further setup${RESETCOLOR}"
+# open ~/Applications/Dropbox.app # To enter dropbox details
 
-echo -e "${BLUE}Adding items to the dock${RESETCOLOR}"
-# Google Chrome
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# Spotify
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# Sublime Text
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sublime Text 2.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# Terminal
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# HipChat
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/HipChat.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# 1Password
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/1Password.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# Sequal Pro
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sequel Pro.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# echo -e "${BLUE}Adding items to the dock${RESETCOLOR}"
+# # Google Chrome
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # Spotify
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # Sublime Text
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sublime Text 2.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # Terminal
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # HipChat
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/HipChat.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # 1Password
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/1Password.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# # Sequal Pro
+# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sequel Pro.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
-killall Dock
+# killall Dock
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
