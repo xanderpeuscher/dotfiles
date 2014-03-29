@@ -1,5 +1,0 @@
-# PF firewall anchor file
-# http://blog.scottlowe.org/2013/05/15/using-pf-on-os-x-mountain-lion/
-
-# Block 8080 for host3
-block out proto { tcp, udp } from any to 46.19.218.5 port 8080
