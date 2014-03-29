@@ -33,4 +33,5 @@ function parse_git_branch() {
 
 export PS1="\n    ${BLUE}\w\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"  ${YELLOW}\")\$(parse_git_branch)\n${RESETCOLOR}→ "
 
+source ~/.profile
 
