@@ -15,30 +15,61 @@ select yn in "Yes" "No"; do
     esac
 done
 
+echo -e "${BLUE}Setting up the Firewall${RESETCOLOR}"
+
+sudo cat > /etc/pf.anchors/com.label305.pf.rules <<"EOF"
+# PF firewall anchor file
+# http://blog.scottlowe.org/2013/05/15/using-pf-on-os-x-mountain-lion/
+
+# Block 8080 for host3
+block out proto { tcp, udp } from any to 46.19.218.5 port 8080
+
+EOF
+
+sudo cat > /etc/pf.anchors/com.label305.pf.conf <<"EOF"
+anchor "com.label305.pf"
+load anchor "com.label305.pf" from "/etc/pf.anchors/com.label305.pf.rules"
+EOF
+
+sudo cat >> /Library/LaunchDaemons/com.label305.pf.plist <<"EOF"
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer/DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.label305.pf.plist</string>
+        <key>Program</key>
+        <string>/sbin/pfctl</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/sbin/pfctl</string>
+            <string>-e</string>
+            <string>-f</string>
+            <string>/etc/pf.anchors/com.label305.pf.conf</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>ServiceDescription</key>
+        <string>FreeBSD Packet Filter (pf) daemon</string>
+  	    <key>StandardErrorPath</key>
+		<string>/var/log/pf.log</string>
+		<key>StandardOutPath</key>
+		<string>/var/log/pf.log</string>
+    </dict>
+</plist>
+EOF
+
 echo -e "${BLUE}Setting up Bash and Git Config${RESETCOLOR}"
 
 cp .bash_profile ~/.bash_profile
 cp .bashrc ~/.bashrc
 cp .gitconfig ~/.gitconfig
 
-# echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
-# mkdir -p ~/.rvm/src
-# cd ~/.rvm/src
-# rm -rf ./rvm
-# git clone --depth 1 git://github.com/wayneeseguin/rvm.git
-# cd rvm
-# ./install
-# cd ~/
+echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
+\curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
 
-# source ~/.bash_profile # To reload the bash profile
-# source ~/.bashrc # To reload the bashrc
-
-# rvm install 1.9.2
-# rvm install 2.1.0
-# rvm --default 2.1.0
-
-# echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
-# gem install cocoapods rails sinatra
+echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
+gem install cocoapods rails sinatra
 
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -76,26 +107,5 @@ brew cask install logitech-control-center
 
 echo -e "${BLUE}Linking commands${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
-
-# echo -e "${BLUE}Opening apps that need further setup${RESETCOLOR}"
-# open ~/Applications/Dropbox.app # To enter dropbox details
-
-# echo -e "${BLUE}Adding items to the dock${RESETCOLOR}"
-# # Google Chrome
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # Spotify
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # Sublime Text
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sublime Text 2.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # Terminal
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Utilities/Terminal</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # HipChat
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/HipChat.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # 1Password
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/1Password.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-# # Sequal Pro
-# defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>~/Applications/Sequel Pro.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-
-# killall Dock
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
