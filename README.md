@@ -1,11 +1,14 @@
-dotfiles
+Dotfiles of tscheepers
 ========
 
-To get started bootstrapping your mac execute the following commands.
+To get started bootstrapping your mac execute the following commands. This will install several applications and setup the bash environment. 
 
-```
-mkdir -p ~/Development/dotfiles  && \
-curl -sS https://github.com/tscheepers/dotfiles/archive/master.zip > ~/Development/dotfiles.zip && \
-unzip ~/Development/dotfiles.zip -d dotfiles && cd ~/Development/dotfiles && \
-chmod u+x bootstrap.sh && ./bootstrap.sh
+``` bash
+$ mkdir -p ~/Development/dotfiles
+$ cd ~/Development/dotfiles
+
+# download the contents of this repository and put it in this directory
+
+$ chmod u+x bootstrap.sh
+$ ./bootstrap.sh
 ```
