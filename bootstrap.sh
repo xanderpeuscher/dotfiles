@@ -34,6 +34,10 @@ echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
 brew install wget
 brew install git
 brew install gcutil
+brew tap josegonzalez/homebrew-php
+brew tap homebrew/versions
+brew install php55-intl
+brew install josegonzalez/php/composer
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
