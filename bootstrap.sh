@@ -38,6 +38,7 @@ brew tap josegonzalez/homebrew-php
 brew tap homebrew/versions
 brew install php55-intl
 brew install josegonzalez/php/composer
+brew install mcrypt php55-mcrypt
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
