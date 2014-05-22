@@ -66,6 +66,9 @@ brew cask install sequel-pro
 # For hardware
 brew cask install logitech-control-center
 
+# Google App Engine
+brew cask install googleappenginelauncher
+
 echo -e "${BLUE}Linking commands${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
 
