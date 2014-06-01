@@ -1,3 +1,5 @@
+python from powerline.ext.vim import source_plugin; source_plugin()
+
 set nocompatible   " Disable vi-compatibility
 set t_Co=256
  
