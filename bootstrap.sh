@@ -82,6 +82,7 @@ brew cask install logitech-control-center
 
 echo -e "${BLUE}Downloading some files{RESETCOLOR}"
 wget -O ~/Downloads/Inconsolata.otf http://levien.com/type/myfonts/Inconsolata.otf
+wget -O ~/Downloads/Inconsolata%20for%20Powerline.otf https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 wget -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/halflife.dvtcolortheme https://raw.githubusercontent.com/daylerees/colour-schemes/master/xcode/halflife.dvtcolortheme
