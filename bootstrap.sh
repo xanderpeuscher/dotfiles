@@ -48,7 +48,7 @@ brew install vim --with-python --with-ruby
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree #nerdtree for vim
-git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim ~/.vim/bundle/ctrlp #ctrlp for vim
+git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp #ctrlp for vim
 
 # add vimrc :"python from powerline.ext.vim import source_plugin; source_plugin()"
 
