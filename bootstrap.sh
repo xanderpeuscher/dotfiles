@@ -20,6 +20,7 @@ echo -e "${BLUE}Setting up Bash and Git Config${RESETCOLOR}"
 cp .bash_profile ~/.bash_profile
 cp .bashrc ~/.bashrc
 cp .gitconfig ~/.gitconfig
+cp .vimrc ~/.vimrc
 
 echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
