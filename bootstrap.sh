@@ -31,9 +31,7 @@ echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
-brew install wget
-brew install git
-brew install gcutil
+brew install wget git gcutil macvim
 brew tap josegonzalez/homebrew-php
 brew tap homebrew/versions
 brew install php55-intl
