@@ -31,12 +31,27 @@ echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
-brew install wget git gcutil ctags
+brew install wget git gcutil ctags python
 brew tap josegonzalez/homebrew-php
+brew tap homebrew/dupes
 brew tap homebrew/versions
 brew install php55-intl
 brew install josegonzalez/php/composer
 brew install mcrypt php55-mcrypt
+
+echo -e "Installing PIP (Python)"
+easy_install pip
+pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
+
+echo -e "Setting up VIM"
+brew install vim --with-python --with-ruby
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree #nerdtree for vim
+git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim ~/.vim/bundle/ctrlp #ctrlp for vim
+
+# add vimrc :"python from powerline.ext.vim import source_plugin; source_plugin()"
+
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
@@ -50,24 +65,29 @@ brew cask install dropbox
 brew cask install onepassword
 brew cask install vlc
 brew cask install hipchat
+brew cask install adobe-creative-cloud
 # Plugins/utilities
 brew cask install silverlight
 brew cask install prey
+brew cask install the-unarchiver
 # For development
+brew cask install phpstorm
 brew cask install crashlytics
 brew cask install testflight
 brew cask install sublime-text
 brew cask install flow
+brew cask install cyberduck
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install sequel-pro
+brew cask install googleappenginelauncher
 # For hardware
 brew cask install logitech-control-center
 
-# Google App Engine
-brew cask install googleappenginelauncher
-
 echo -e "${BLUE}Linking commands${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
+
+echo -e "${BLUE}Downloading some files{RESETCOLOR}"
+wget -O ~/Downloads/Inconsolata.otf http://levien.com/type/myfonts/Inconsolata.otf
 
 echo -e "${GREEN}Script done${RESETCOLOR}"
