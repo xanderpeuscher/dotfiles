@@ -91,4 +91,9 @@ ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
 echo -e "${BLUE}Downloading some files{RESETCOLOR}"
 wget -O ~/Downloads/Inconsolata.otf http://levien.com/type/myfonts/Inconsolata.otf
 
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+wget -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/halflife.dvtcolortheme https://raw.githubusercontent.com/daylerees/colour-schemes/master/xcode/halflife.dvtcolortheme
+
+git clone https://github.com/daylerees/colour-schemes.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/daylerees\ -\ themes
+
 echo -e "${GREEN}Script done${RESETCOLOR}"
