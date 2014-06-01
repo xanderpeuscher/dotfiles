@@ -46,12 +46,7 @@ pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
 
 echo -e "Setting up VIM"
 brew install vim --with-python --with-ruby
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree #nerdtree for vim
-git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp #ctrlp for vim
-
-# add vimrc :"python from powerline.ext.vim import source_plugin; source_plugin()"
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
