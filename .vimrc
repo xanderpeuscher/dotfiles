@@ -22,6 +22,7 @@ set go-=L 				" Removes left hand scroll bar
 set linespace=15
 set number 				" always show line numbers
 
+set syntax=on
 set tabstop=4           " a tab is four spaces
 set smarttab
 set autoindent          " always set autoindenting on
