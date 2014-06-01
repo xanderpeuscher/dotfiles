@@ -47,7 +47,7 @@ pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
 echo -e "Setting up VIM"
 brew install vim --with-python --with-ruby
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+vim +PluginInstall +qall
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
