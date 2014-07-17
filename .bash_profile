@@ -1,4 +1,5 @@
 # adding ~/bin to the path
+export PATH="$(brew --prefix php55)/bin:$PATH"
 export PATH=${PATH}:$HOME/bin
 
 # adding RVM
