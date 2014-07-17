@@ -77,6 +77,7 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install sequel-pro
 brew cask install googleappenginelauncher
+brew cask install dash
 # For hardware
 brew cask install logitech-control-center
 
