@@ -93,4 +93,7 @@ ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
 wget -O  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings https://raw.githubusercontent.com/tscheepers/dotfiles/master/sublime/Preferences.sublime-settings
 git clone https://github.com/daylerees/colour-schemes.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/daylerees\ -\ themes
 
+echo -e "${BLUE}Setting up Git tab completion${RESETCOLOR}"
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+
 echo -e "${GREEN}Script done${RESETCOLOR}"
