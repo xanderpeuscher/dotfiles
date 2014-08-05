@@ -32,7 +32,7 @@ echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
-brew install wget git gcutil ctags python
+brew install wget git gcutil ctags python mysql
 brew tap josegonzalez/homebrew-php
 brew tap homebrew/dupes
 brew tap homebrew/versions
