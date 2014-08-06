@@ -3,5 +3,6 @@
 	"font_face": "Inconsolata",
 	"font_size": 13.0,
 	"line_padding_bottom": 2,
-	"line_padding_top": 2
+	"line_padding_top": 2,
+	"trim_trailing_white_space_on_save": true
 }
