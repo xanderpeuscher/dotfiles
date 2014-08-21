@@ -22,11 +22,11 @@ cp .bashrc ~/.bashrc
 cp .gitconfig ~/.gitconfig
 cp .vimrc ~/.vimrc
 
-echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
-\curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
+#echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
+#\curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
 
-echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
-gem install cocoapods rails sinatra
+#echo -e "${BLUE}Installing Ruby Gems${RESETCOLOR}"
+#gem install cocoapods rails sinatra jekyll jekyll-sass no-document 
 
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -39,15 +39,16 @@ brew tap homebrew/versions
 brew install php55-intl
 brew install josegonzalez/php/composer
 brew install mcrypt php55-mcrypt
+brew install composer phpunit
 
-echo -e "Installing PIP (Python)"
-easy_install pip
-pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
+#echo -e "Installing PIP (Python)"
+#sudo easy_install pip
+#pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
 
-echo -e "Setting up VIM"
-brew install vim --with-python --with-ruby
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+#echo -e "Setting up VIM"
+#brew install vim --with-python --with-ruby
+#git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#vim +PluginInstall +qall
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
