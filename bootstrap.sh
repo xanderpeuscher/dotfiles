@@ -31,23 +31,19 @@ gem install cocoapods rails sinatra
 echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
+echo -e "${BLUE}Installing Caskroom{RESETCOLOR}"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+
 echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
 brew install wget git gcutil ctags python mysql
 brew tap josegonzalez/homebrew-php
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew install php55-intl
+brew install php70-intl
 brew install josegonzalez/php/composer
-brew install mcrypt php55-mcrypt
-
-echo -e "Installing PIP (Python)"
-easy_install pip
-pip install --user git+git://github.com/Lokaltog/powerline #powerline for vim
-
-echo -e "Setting up VIM"
-brew install vim --with-python --with-ruby
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+brew install mcrypt php70-mcrypt
+brew install --HEAD homebrew/php/php70-memcached
+brew install memcached
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
@@ -60,37 +56,26 @@ brew cask install spotify
 brew cask install dropbox
 brew cask install onepassword
 brew cask install vlc
-brew cask install hipchat
+brew cask install slack
 brew cask install adobe-creative-cloud
 # Plugins/utilities
 brew cask install silverlight
-brew cask install prey
 brew cask install the-unarchiver
 # For development
 brew cask install phpstorm
 brew cask install crashlytics
-brew cask install testflight
 brew cask install sublime-text
 brew cask install flow
-brew cask install cyberduck
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install sequel-pro
-brew cask install googleappenginelauncher
-brew cask install dash
+brew cask install filezilla
 # For hardware
 brew cask install logitech-control-center
 
-echo -e "${BLUE}Downloading some files{RESETCOLOR}"
-wget -O ~/Downloads/Inconsolata.otf http://levien.com/type/myfonts/Inconsolata.otf
-wget -O ~/Downloads/Inconsolata%20for%20Powerline.otf https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
-
-mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
-wget -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/halflife.dvtcolortheme https://raw.githubusercontent.com/daylerees/colour-schemes/master/xcode/halflife.dvtcolortheme
-
 echo -e "${BLUE}Setting up sublime${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
-wget -O  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings https://raw.githubusercontent.com/tscheepers/dotfiles/master/sublime/Preferences.sublime-settings
+wget -O  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings https://raw.githubusercontent.com/xanderpeuscher/dotfiles/master/sublime/Preferences.sublime-settings
 git clone https://github.com/daylerees/colour-schemes.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/daylerees\ -\ themes
 
 echo -e "${BLUE}Setting up Git tab completion${RESETCOLOR}"
