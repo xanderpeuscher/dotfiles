@@ -1,5 +1,5 @@
 # adding ~/bin to the path
-export PATH="$(brew --prefix php55)/bin:$PATH"
+export PATH="$(brew --prefix php70)/bin:$PATH"
 export PATH=${PATH}:$HOME/bin
 
 # adding RVM
@@ -14,6 +14,24 @@ fi
 
 # setting the default editor
 export EDITOR='subl -w'
+
+# aliases
+alias behat='./vendor/bin/behat'
+alias phpunit='./vendor/bin/phpunit'
+alias art='php artisan'
+alias rb='php artisan --env=testing migrate && php artisan --env=testing db:seed && grunt && vendor/bin/behat --verbose --stop-on-failure'
+alias sb='php artisan serve --host=behat.localhost'
+alias rbs='
+	php artisan --env=testing migrate &&
+	php artisan --env=testing db:seed &&
+	grunt &&
+	vendor/bin/behat --verbose --stop-on-failure'
+	# Add the path to the project folder, like "/Users/Xander/Development/"$1"/app/tests/acceptance/"$2".feature"
+
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO'
+alias openBash='subl ~/.bash_profile'
+alias apache='sudo apachectl'
 
 # setting colors
 # http://stackoverflow.com/questions/1550288/mac-os-x-terminal-colors
