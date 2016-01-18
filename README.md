@@ -1,4 +1,4 @@
-Dotfiles of tscheepers
+Dotfiles of xanderpeuscher
 ========
 
 To get started bootstrapping your mac execute the following commands. This will install several applications and setup the bash environment. 
