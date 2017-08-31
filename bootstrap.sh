@@ -45,6 +45,9 @@ brew install mcrypt php70-mcrypt
 brew install --HEAD homebrew/php/php70-memcached
 brew install memcached
 
+echo -e "${BLUE}Installing some handy tools ${RESETCOLOR}"
+brew install josegonzalez/php/brew-php-switcher
+
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
 brew install brew-cask
@@ -59,7 +62,6 @@ brew cask install vlc
 brew cask install slack
 brew cask install adobe-creative-cloud
 # Plugins/utilities
-brew cask install silverlight
 brew cask install the-unarchiver
 # For development
 brew cask install phpstorm
@@ -72,6 +74,8 @@ brew cask install sequel-pro
 brew cask install filezilla
 # For hardware
 brew cask install logitech-control-center
+brew cask install logitech-unifying
+brew cask install logitech-options
 
 echo -e "${BLUE}Setting up sublime${RESETCOLOR}"
 ln -sf ~/Applications/Sublime\ Text\ 2.app/ ~/bin/subl
