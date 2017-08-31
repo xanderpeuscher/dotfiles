@@ -36,17 +36,18 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 echo -e "${BLUE}Installing couple of base homebrew packages${RESETCOLOR}"
 brew install wget git gcutil ctags python mysql
-brew tap josegonzalez/homebrew-php
 brew tap homebrew/dupes
 brew tap homebrew/versions
-brew install php70-intl
 brew install josegonzalez/php/composer
 brew install mcrypt php70-mcrypt
 brew install --HEAD homebrew/php/php70-memcached
 brew install memcached
+brew install php70-timecop
+brew install php70-intl
+brew install php70-gmp
 
 echo -e "${BLUE}Installing some handy tools ${RESETCOLOR}"
-brew install josegonzalez/php/brew-php-switcher
+brew install brew-php-switcher
 
 echo -e "${BLUE}Installing homebrew cask${RESETCOLOR}"
 brew tap phinze/cask
