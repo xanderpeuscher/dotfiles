@@ -28,10 +28,11 @@ alias rbs='
 	vendor/bin/behat --verbose --stop-on-failure'
 	# Add the path to the project folder, like "/Users/Xander/Development/"$1"/app/tests/acceptance/"$2".feature"
 
-alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES'
-alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO'
-alias openBash='subl ~/.bash_profile'
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
+alias openbash='subl ~/.bash_profile'
 alias apache='sudo apachectl'
+alias switchphp='brew-php-switcher'
 
 # setting colors
 # http://stackoverflow.com/questions/1550288/mac-os-x-terminal-colors
