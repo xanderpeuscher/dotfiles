@@ -28,9 +28,6 @@ echo -e "${BLUE}Installing Ruby with RVM${RESETCOLOR}"
 echo -e "${BLUE}Installing Ruby Gems{RESETCOLOR}"
 gem install cocoapods rails sinatra
 
-echo -e "${BLUE}Installing homebrew${RESETCOLOR}"
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-
 echo -e "${BLUE}Installing Caskroom{RESETCOLOR}"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 
